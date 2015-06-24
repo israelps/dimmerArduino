@@ -72,7 +72,7 @@ int controla_acionamento() {
   //controla valor desligamento
   if (rtc.getHours() >= hora_desligamento && rtc.getHours() <= hora_desligamento + tempo_de_transicao) {
     //mapeia e retorna o valor a cada minuto
-    int t = map(rtc.getMinutes(), 0, 60, 0, 1023);
+    int t = map(rtc.getMinutes(), 0, 60, 1023, 0);
     return t* 7.1652 + 1;
   }
   else{ return 0;}
